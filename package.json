@@ -1,0 +1,21 @@
+{
+  "name": "typo",
+  "version": "0.1.0",
+  "description": "Typhographer framework",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Anton Shuvalov <anton@shuvalov.info>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.2.4"
+  },
+  "dependencies": {
+    "node-middlewares": "^2.0.0",
+    "typographic-quotes": "^1.1.0"
+  }
+}

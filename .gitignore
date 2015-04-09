@@ -1,0 +1,5 @@
+# Folder view configuration files
+.DS_Store
+._*
+node_modules
+npm-debug.log
