@@ -1,8 +1,9 @@
 # Typographr
 
 Superslim text transforming framework. With `typographr` you can easy
-to create your very own text transformation logic for many cases like
-just fix quotes or even convert your text from markdown to html.
+to create modular typographers with your very own text transformation logic
+to use it on many cases like just fix quotes or even convert your text
+rom markdown to html.
 
 ## Install
 
