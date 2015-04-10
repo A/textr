@@ -1,4 +1,4 @@
-# Typographr
+# Textr
 
 [![Build Status](https://travis-ci.org/shuvalov-anton/textr.svg)](https://travis-ci.org/shuvalov-anton/textr)
 
