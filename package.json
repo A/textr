@@ -12,10 +12,11 @@
   "author": "Anton Shuvalov <anton@shuvalov.info>",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^2.2.4"
+    "mocha": "^2.2.4",
+    "typographic-ellipses": "^1.0.9",
+    "typographic-single-spaces": "^1.0.0",
+    "typographic-quotes": "^1.1.0"
   },
   "dependencies": {
-    "node-middlewares": "^2.0.0",
-    "typographic-quotes": "^1.1.0"
   }
 }
