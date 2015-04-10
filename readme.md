@@ -1,4 +1,4 @@
-# Textr
+# textr
 
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
@@ -11,7 +11,8 @@
 Superslim text transforming framework. With `textr` you can easy
 to create modular typographers with your very own text transformation logic
 to use it on many cases like just fix quotes or even convert your text
-rom markdown to html.
+from markdown to html.
+
 
 ## Install
 
@@ -19,23 +20,25 @@ rom markdown to html.
 npm install --save textr
 ```
 
+
 ## Usage
 
 ```js
 var textr      = require('textr');
-var quotes     = require('typographic-quotes');
 var ellipses   = require('typographic-ellipses');
 var spaces     = require('typographic-single-spaces');
 
+// you can wrap plugins to partial apply their options
+// basically for possible locale parameter
+var _quotes    = require('typographic-quotes');
+var quotes     = function (text) { return _quotes(text, 'ru' ); };
+
 // Create new text transformer
+// and register your plugins
 tf = textr()
-  // and register your plugins
   .use(ellipses)
   .use(spaces)
-  // you can wrap function to partial apply their options
-  .use(function (text) { return quotes(text, 'ru' ); })
-;
-
+  .use(quotes);
 
 // then just send some text to the transformer
 tf('Hello "world"...'); // Hello “world”…
@@ -43,15 +46,15 @@ tf('Hello "world"...'); // Hello “world”…
 
 ## Transformation plugins
 
-You can easily to create the new one' cause each plugin is just a function
+You can easily to create the new one because each plugin is just a function
 that get text, transform it and return new. For example this is the source
-of the `ellipses` func:
+of the [`typographic-ellipses`](ellipses) plugin:
 
 ```js
-module.exports = function(input) {
-  return input.replace(/\.{3}/gim, '…');
-}
+module.exports = function(input) { return input.replace(/\.{3}/gim, '…'); }
 ```
+
+[ellipses]: https://github.com/matmuchrapna/typographic-ellipses
 
 ## List of the transforms to use
 
