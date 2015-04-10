@@ -3,9 +3,6 @@
   "version": "0.1.1",
   "description": "Tiny and extendable text transforming framework",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "mocha"
   },
