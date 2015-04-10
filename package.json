@@ -4,7 +4,8 @@
   "description": "Tiny and extendable text transforming framework",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --require babel/register",
+    "tdd": "npm test -- --watch"
   },
   "author": "Anton Shuvalov <anton@shuvalov.info>",
   "license": "MIT",
