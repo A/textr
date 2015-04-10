@@ -2,10 +2,13 @@
   "name": "textr",
   "version": "0.1.1",
   "description": "Tiny and extendable text transforming framework",
-  "main": "index.js",
+  "main": "index.es5.js",
   "scripts": {
     "test": "mocha --require babel/register",
-    "tdd": "npm test -- --watch"
+    "tdd": "npm test -- --watch",
+    "transpile": "babel index.js > index.es5.js",
+    "prepublish": "npm run transpile",
+    "postpublish": "rm *.es5.js && git push --follow-tags"
   },
   "author": "Anton Shuvalov <anton@shuvalov.info>",
   "license": "MIT",
