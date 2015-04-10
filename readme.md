@@ -17,7 +17,7 @@ rom markdown to html.
 npm install --save textr
 ```
 
-## Examples
+## Usage
 
 ```js
 var textr      = require('textr');
