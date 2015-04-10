@@ -9,6 +9,7 @@
   "author": "Anton Shuvalov <anton@shuvalov.info>",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^5.0.0",
     "mocha": "^2.2.4",
     "typographic-ellipses": "^1.0.9",
     "typographic-single-spaces": "^1.0.0",
