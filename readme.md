@@ -59,4 +59,4 @@ function(input) {
 
 ## License
 
-MIT
+MIT. [Shuvalov Anton](http://shuvalov.info) © 2015
