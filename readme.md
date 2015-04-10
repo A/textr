@@ -1,6 +1,6 @@
 # Typographr
 
-Superslim text transforming framework. With `typographr` you can easy
+Superslim text transforming framework. With `textr` you can easy
 to create modular typographers with your very own text transformation logic
 to use it on many cases like just fix quotes or even convert your text
 rom markdown to html.
@@ -8,23 +8,24 @@ rom markdown to html.
 ## Install
 
 ```
-npm install typographr
+npm install textr
 ```
 
 ## Examples
 
 ```js
-var typographr = require('typographr');
+var textr = require('textr');
 var quotes     = require('typographic-quotes');
 var ellipses   = require('typographic-ellipses');
 var spaces     = require('typographic-single-spaces');
 
-// Create new transformer
-tf = typographr()
+// Create new text transformer
+tf = textr()
   // and register your plugins
   .use(ellipses)
   .use(spaces)
-  .use(quotes)
+  // you can wrap function to partial apply their options
+  .use(function (text) { return quotes(text, 'ru' ); })
 ;
 
 
@@ -39,7 +40,7 @@ that get text, transform it and return new. For example this is the source
 of the `ellipses` func:
 
 ```js
-function(input) {
+module.exports = function(input) {
   return input.replace(/\.{3}/gim, '…');
 }
 ```
