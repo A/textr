@@ -1,7 +1,7 @@
 {
-  "name": "typo",
+  "name": "typographr",
   "version": "0.1.0",
-  "description": "Typhographer framework",
+  "description": "Super slim text transforming framework",
   "main": "index.js",
   "directories": {
     "test": "test"
