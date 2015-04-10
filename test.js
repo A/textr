@@ -11,21 +11,23 @@ var spaces    = require('typographic-single-spaces');
 describe('typo', function() {
   before(function() {
     textr
-      .use(function (text) { return quotes(text, 'ru'); })
+      .use(function(text) { return quotes(text, 'ru'); })
       .use(ellipses)
-      .use(spaces)
-    ;
+      .use(spaces);
   });
+
   it('should correct the quotes', function() {
     var input  = 'hello "world"';
     var output = 'hello «world»';
     assert(textr(input) === output);
   });
+
   it('should correct ellipses', function() {
     var input  = 'omg...';
     var output = 'omg…';
     assert(textr(input) === output);
   });
+
   it('should remove extra spaces', function() {
     var input  = 'extra       spaces';
     var output = 'extra spaces';
