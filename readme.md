@@ -6,6 +6,8 @@
 [![Dependency Status][depstat-image]][depstat-url]
 [![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
+> Tiny and extendable text transforming framework
+
 Superslim text transforming framework. With `textr` you can easy
 to create modular typographers with your very own text transformation logic
 to use it on many cases like just fix quotes or even convert your text
