@@ -14,7 +14,7 @@ rom markdown to html.
 ## Install
 
 ```
-npm install textr
+npm install --save textr
 ```
 
 ## Examples
