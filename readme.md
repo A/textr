@@ -1,6 +1,10 @@
 # Textr
 
-[![Build Status](https://travis-ci.org/shuvalov-anton/textr.svg)](https://travis-ci.org/shuvalov-anton/textr)
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Coveralls Status][coveralls-image]][coveralls-url]
+[![Dependency Status][depstat-image]][depstat-url]
+[![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
 Superslim text transforming framework. With `textr` you can easy
 to create modular typographers with your very own text transformation logic
@@ -63,3 +67,19 @@ module.exports = function(input) {
 ## License
 
 MIT © [Shuvalov Anton](http://shuvalov.info)
+
+
+[npm-url]: https://npmjs.org/package/textr
+[npm-image]: http://img.shields.io/npm/v/textr.svg
+
+[travis-url]: https://travis-ci.org/shuvalov-anton/textr
+[travis-image]: http://img.shields.io/travis/shuvalov-anton/textr.svg
+
+[coveralls-url]: https://coveralls.io/r/shuvalov-anton/textr
+[coveralls-image]: http://img.shields.io/coveralls/shuvalov-anton/textr.svg
+
+[depstat-url]: https://david-dm.org/shuvalov-anton/textr
+[depstat-image]: https://david-dm.org/shuvalov-anton/textr.svg
+
+[depstat-dev-url]: https://david-dm.org/shuvalov-anton/textr
+[depstat-dev-image]: https://david-dm.org/shuvalov-anton/textr/dev-status.svg
