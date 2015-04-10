@@ -56,3 +56,6 @@ function(input) {
 - [matmuchrapna/typographic-apostrophes-for-possessive-plurals](https://github.com/matmuchrapna/typographic-apostrophes-for-possessive-plurals)
 - [matmuchrapna/typographic-apostrophes](https://github.com/matmuchrapna/typographic-apostrophes)
 
+## License
+
+MIT
