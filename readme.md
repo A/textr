@@ -16,7 +16,7 @@ npm install textr
 ## Examples
 
 ```js
-var textr = require('textr');
+var textr      = require('textr');
 var quotes     = require('typographic-quotes');
 var ellipses   = require('typographic-ellipses');
 var spaces     = require('typographic-single-spaces');
