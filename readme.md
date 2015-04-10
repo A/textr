@@ -24,14 +24,14 @@ npm install --save textr
 ## Usage
 
 ```js
-var textr      = require('textr');
-var ellipses   = require('typographic-ellipses');
-var spaces     = require('typographic-single-spaces');
+var textr    = require('textr');
+var ellipses = require('typographic-ellipses');
+var spaces   = require('typographic-single-spaces');
 
 // you can wrap plugins to partial apply their options
 // basically for possible locale parameter
-var _quotes    = require('typographic-quotes');
-var quotes     = function (text) { return _quotes(text, 'ru' ); };
+var _quotes  = require('typographic-quotes');
+var quotes   = function (text) { return _quotes(text, 'ru' ); };
 
 // Create new text transformer
 // and register your plugins
@@ -44,30 +44,22 @@ tf = textr()
 tf('Hello "world"...'); // Hello “world”…
 ```
 
-## Transformation plugins
+## Textr plugins
 
-You can easily to create the new one because each plugin is just a function
-that get text, transform it and return new. For example this is the source
-of the [`typographic-ellipses`](ellipses) plugin:
+All textr plugins are available on npm, labelled with [typographic][typographic]
+keyword.
+
+Also you can easily create new one. Don’t be scared. Each plugin is just
+a function that get text, transform it and return result of processing.
+For example this is the source of the [`typographic-ellipses`](ellipses) plugin:
 
 ```js
 module.exports = function(input) { return input.replace(/\.{3}/gim, '…'); }
 ```
 
+[typographic]: https://www.npmjs.com/browse/keyword/typographic
 [ellipses]: https://github.com/matmuchrapna/typographic-ellipses
 
-## List of the transforms to use
-
-- [matmuchrapna/typographic-quotes](https://github.com/matmuchrapna/typographic-quotes)
-- [matmuchrapna/typographic-registered-trademark](https://github.com/matmuchrapna/typographic-registered-trademark)
-- [matmuchrapna/typographic-trademark](https://github.com/matmuchrapna/typographic-trademark)
-- [matmuchrapna/typographic-copyright](https://github.com/matmuchrapna/typographic-copyright)
-- [matmuchrapna/typographic-em-dashes](https://github.com/matmuchrapna/typographic-em-dashes)
-- [matmuchrapna/typographic-en-dashes](https://github.com/matmuchrapna/typographic-en-dashes)
-- [matmuchrapna/typographic-single-spaces](https://github.com/matmuchrapna/typographic-single-spaces)
-- [matmuchrapna/typographic-ellipses](https://github.com/matmuchrapna/typographic-ellipses)
-- [matmuchrapna/typographic-apostrophes-for-possessive-plurals](https://github.com/matmuchrapna/typographic-apostrophes-for-possessive-plurals)
-- [matmuchrapna/typographic-apostrophes](https://github.com/matmuchrapna/typographic-apostrophes)
 
 ## License
 
