@@ -13,6 +13,9 @@
     "prepublish": "npm run transpile",
     "postpublish": "rm *.es5.js && git push --follow-tags"
   },
+  "keywords": [
+    "typographic"
+  ],
   "author": "Anton Shuvalov <anton@shuvalov.info>",
   "license": "MIT",
   "devDependencies": {
