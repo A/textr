@@ -1,5 +1,7 @@
 # Typographr
 
+[![Build Status](https://travis-ci.org/shuvalov-anton/textr.svg)](https://travis-ci.org/shuvalov-anton/textr)
+
 Superslim text transforming framework. With `textr` you can easy
 to create modular typographers with your very own text transformation logic
 to use it on many cases like just fix quotes or even convert your text
