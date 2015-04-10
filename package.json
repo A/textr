@@ -4,6 +4,9 @@
   "description": "Tiny and extendable text transforming framework",
   "main": "index.es5.js",
   "scripts": {
+    "coverage": "istanbul cover _mocha -- --require babel/register",
+    "precoveralls": "npm run coverage",
+    "coveralls": "coveralls < coverage/lcov.info",
     "test": "mocha --require babel/register",
     "tdd": "npm test -- --watch",
     "transpile": "babel index.js > index.es5.js",
@@ -15,6 +18,9 @@
   "devDependencies": {
     "babel": "^5.0.0",
     "mocha": "^2.2.4",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.11",
+    "mocha-lcov-reporter": "0.0.2",
     "typographic-ellipses": "^1.0.9",
     "typographic-single-spaces": "^1.0.0",
     "typographic-quotes": "^1.1.0"
