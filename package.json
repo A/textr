@@ -7,8 +7,6 @@
     "coverage": "istanbul cover _mocha",
     "precoveralls": "npm run coverage",
     "coveralls": "coveralls < coverage/lcov.info",
-    "lint": "jscs -p airbnb index.js test.js",
-    "pretest": "npm run lint",
     "precommit": "npm test",
     "test": "mocha",
     "tdd": "npm test -- --watch",
@@ -25,7 +23,6 @@
     "istanbul": "^0.3.11",
     "mocha-lcov-reporter": "0.0.2",
     "husky": "^0.7.0",
-    "jscs": "^1.12.0",
     "typographic-ellipses": "^1.0.9",
     "typographic-single-spaces": "^1.0.0",
     "typographic-quotes": "^1.1.0"
