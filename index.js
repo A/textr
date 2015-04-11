@@ -1,13 +1,19 @@
 'use strict';
 
 
-module.exports = function textr() {
+module.exports = function textr(options) {
 
   /**
    * list of registred middlewares
    * @api public
    */
   var mws = [];
+
+  /**
+   * Options will be passed to either of the middlewares as second param.
+   * @api private
+   */
+  options = options || {};
 
   /**
    * expose public interface of the textr
@@ -56,7 +62,7 @@ module.exports = function textr() {
    */
   function parse(text) {
     return mws.reduce(function(text, mw) {
-      return mw(text);
+      return mw(text, options);
     }, text);
   }
 
