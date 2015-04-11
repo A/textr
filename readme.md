@@ -10,7 +10,7 @@
 
 Textr is good instrument to create modular tools to [make your typography better][bad-habits].
 It can compose any functions that get text, transform it and return result of
-processing. For example, check out few: [`typographic-quotes`][typographic-quotes],
+processing. For example, check out few: [typographic-quotes][typographic-quotes],
 [typographic-math-symbols][typographic-math-symbols],
 [typographic-em-dashes][typographic-em-dashes] and [typographic-ellipses][typographic-ellipses].
 
