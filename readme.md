@@ -33,25 +33,47 @@ npm install --save textr
 var textr    = require('textr');
 var ellipses = require('typographic-ellipses');
 var spaces   = require('typographic-single-spaces');
-var _quotes  = require('typographic-quotes');
+var quotes  = require('typographic-quotes');
 
 // Create new text transformer by compose yours
-tf = textr()
+tf = textr({ locale: 'ru'})
   .use(ellipses)
   .use(spaces)
-  .use(quotes({ locale: 'ru' }))
+  .use(quotes)
 ;
 
 // then just send some text to the transformer
 tf('Hello "world"...'); // Hello “world”…
+```
+
+## API
+
+### textr()
+
+Create new textr transform function (`tf`).
+
+### tf.use(...fn)
+
+Register transform function as `tf` middleware.
+
+### tf.process(text)
+
+Process given text by the middlewares.
+
+### tf(text)
+
+Identical to `tf.process(text)`.
 
 
-// If some function is expected for other options besides the text
-// then you can write simple wrapper to set them:
-function quotes(opts) {
-  return function(input) {
-    return _quotes(input, opts && opts.locale);
-  }
+## Plugins API
+
+Each plugin will be called with 2 arguments: text and options
+setted on `textr()`.
+
+```
+function myPlugin(text, options) {
+  console.log(options); // { locale: 'ru' }
+  return text;
 }
 ```
 

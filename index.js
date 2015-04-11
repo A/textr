@@ -25,7 +25,7 @@ module.exports = function textr(options) {
    *        // register plugins
    *        .use(quotes)
    *        .use(capitalize)
-   *        .parse(text)
+   *        .process(text)
    *
    *      // save transformer to reuse
    *      tf = textr()
@@ -35,32 +35,32 @@ module.exports = function textr(options) {
    *      return ['Hello', 'world'].map(tf);
    *
    * @constructor
-   * @alias parse
-   * @return {object:{parse:fn,use:fn}}
-   * @return {fn:parse}
+   * @alias process
+   * @return {object:{process:fn,use:fn}}
+   * @return {fn:process}
    * @api public
    */
   function api() {
-    return parse.apply(null, arguments);
+    return process.apply(null, arguments);
   }
 
   /**
-   * Expose `parse`, `use` and `mws` as properties
+   * Expose `process`, `use` and `mws` as properties
    * of the `api`
    */
-  api.parse = parse;
+  api.process = process;
   api.use = use;
   api.mws = mws;
 
   return api;
 
   /**
-   * Parse given text by the middlewares
+   * process given text by the middlewares
    * @param {string} text
    * @return {string} text
    * @api public
    */
-  function parse(text) {
+  function process(text) {
     return mws.reduce(function(text, mw) {
       return mw(text, options);
     }, text);
