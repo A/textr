@@ -8,7 +8,7 @@
 
 > Textr is simple framework to compose text transformation functions.
 
-Textr is good instrument to create modular tools to [make your typography better][bad-habbits].
+Textr is good instrument to create modular tools to [make your typography better][bad-habits].
 
 Textr can compose any functions that get text, transform it and return result of
 processing just like unix pipes. For example, check out few: [`typographic-quotes`][typographic-quotes],
