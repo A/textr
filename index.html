@@ -29,7 +29,7 @@
 <a href="https://david-dm.org/shuvalov-anton/textr"><img src="https://david-dm.org/shuvalov-anton/textr/dev-status.svg" alt="DevDependency Status"></a></p>
 
 <blockquote>
-<p>Textr is simple framework to compose text transformation functions.</p>
+<p>Textr is simple framework to compose text transformation functions</p>
 </blockquote>
 
 <p>Textr is good instrument to create modular tools to <a href="http://practicaltypography.com/typewriter-habits.html">make your typography better</a>.
@@ -42,6 +42,16 @@ processing. For example, check out few: <a href="https://github.com/matmuchrapna
 keyword. Either of the plugins has good test coverage, that makes <code>textr</code> transformers
 easy to support even if one of them will be broken or useless for you. Also you
 can easily create new one. Don’t be scared.</p>
+
+<h2>
+<a id="idea-behind-textr" class="anchor" href="#idea-behind-textr" aria-hidden="true"><span class="octicon octicon-link"></span></a>Idea behind textr</h2>
+
+<p>Typography for everybody! At the same time it’s impossible to create one ideal
+typographic engine. It doesn’t work this way. What we can do with it? We can
+easily create and maintain small, simple, full-tested and single responsible
+modules. After this we can compose bunch of these well done modules for every
+specific situation we need, and everybody will be happy with it’s
+own ideal text transformer.</p>
 
 <h2>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
@@ -65,7 +75,7 @@ tf <span class="pl-k">=</span> textr({ locale<span class="pl-k">:</span> <span c
 ;
 
 <span class="pl-c">// then just send some text to the transformer</span>
-tf(<span class="pl-s"><span class="pl-pds">'</span>Hello "world"...<span class="pl-pds">'</span></span>); <span class="pl-c">// Hello “world”…</span></pre></div>
+tf(<span class="pl-s"><span class="pl-pds">'</span>Hello  "world"...<span class="pl-pds">'</span></span>); <span class="pl-c">// Hello «world»…</span></pre></div>
 
 <h2>
 <a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
@@ -81,14 +91,14 @@ tf(<span class="pl-s"><span class="pl-pds">'</span>Hello "world"...<span class="
 <p>Register transform function as <code>tf</code> middleware.</p>
 
 <h3>
-<a id="tfprocesstext" class="anchor" href="#tfprocesstext" aria-hidden="true"><span class="octicon octicon-link"></span></a>tf.process(text)</h3>
+<a id="tfexectext" class="anchor" href="#tfexectext" aria-hidden="true"><span class="octicon octicon-link"></span></a>tf.exec(text)</h3>
 
 <p>Process given text by the middlewares.</p>
 
 <h3>
 <a id="tftext" class="anchor" href="#tftext" aria-hidden="true"><span class="octicon octicon-link"></span></a>tf(text)</h3>
 
-<p>Identical to <code>tf.process(text)</code>.</p>
+<p>Identical to <code>tf.exec(text)</code>.</p>
 
 <h2>
 <a id="plugins-api" class="anchor" href="#plugins-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plugins API</h2>
