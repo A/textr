@@ -1,0 +1,17 @@
+{
+  "browser": false,
+  "curly": true,
+  "expr": true,
+  "indent": false,
+  "jquery": false,
+  "laxcomma": true,
+  "laxbreak": true,
+  "maxcomplexity": 10,
+  "maxdepth": 3,
+  "maxparams": 4,
+  "node": true,
+  "trailing": true,
+  "quotmark": "single",
+  "strict": true,
+  "undef": true
+}
