@@ -41,7 +41,7 @@ describe('textr', function() {
       ;
     });
 
-  })
+  });
 
   describe('parse', function() {
 
@@ -62,7 +62,7 @@ describe('textr', function() {
       ;
     });
 
-  })
+  });
 
 });
 
