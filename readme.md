@@ -6,7 +6,7 @@
 [![Dependency Status][depstat-image]][depstat-url]
 [![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
-> Textr is simple framework to compose text transformation functions.
+> Textr is simple framework to compose text transformation functions
 
 Textr is good instrument to create modular tools to [make your typography better][bad-habits].
 It can compose any functions that get text, transform it and return result of
