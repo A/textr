@@ -43,7 +43,7 @@ tf = textr({ locale: 'ru'})
 ;
 
 // then just send some text to the transformer
-tf('Hello "world"...'); // Hello “world”…
+tf('Hello  "world"...'); // Hello «world»…
 ```
 
 ## API
