@@ -15,9 +15,7 @@ processing. For example, check out few: [typographic-quotes][typographic-quotes]
 [typographic-em-dashes][typographic-em-dashes] and [typographic-ellipses][typographic-ellipses].
 
 All `textr` plugins are available on npm, labelled with [textr][textr-npm]
-keyword.
-
-Also you can easily create new one. Don’t be scared.
+keyword. Also you can easily create new one. Don’t be scared.
 
 
 ## Install
