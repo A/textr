@@ -3,20 +3,26 @@
   "version": "0.1.1",
   "description": "Tiny and extendable text transforming framework",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "mocha"
+    "coverage": "istanbul cover _mocha",
+    "precoveralls": "npm run coverage",
+    "coveralls": "coveralls < coverage/lcov.info",
+    "test": "mocha",
+    "tdd": "npm test -- --watch",
+    "postpublish": "git push --follow-tags"
   },
+  "keywords": [
+    "typographic"
+  ],
   "author": "Anton Shuvalov <anton@shuvalov.info>",
   "license": "MIT",
   "devDependencies": {
     "mocha": "^2.2.4",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.11",
+    "mocha-lcov-reporter": "0.0.2",
     "typographic-ellipses": "^1.0.9",
     "typographic-single-spaces": "^1.0.0",
     "typographic-quotes": "^1.1.0"
-  },
-  "dependencies": {
   }
 }
