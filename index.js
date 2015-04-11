@@ -24,9 +24,7 @@ module.exports = function textr() {
    *      // save transformer to reuse
    *      tf = textr()
    *        // register plugins
-   *        .use(quotes)
-   *        .use(ellipses
-   *        .use(capitalize)
+   *        .use(quotes, elipses, capitalize)
    *      ;
    *      return ['Hello', 'world'].map(tf);
    *
