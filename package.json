@@ -12,7 +12,7 @@
     "postpublish": "git push --follow-tags"
   },
   "keywords": [
-    "typographic"
+    "typographic", "textr", "transformer", "text"
   ],
   "author": "Anton Shuvalov <anton@shuvalov.info>",
   "license": "MIT",
