@@ -56,6 +56,16 @@ function quotes(opts) {
 ```
 
 
+## Idea behind textr
+
+Typography for everybody! At the same time it’s impossible to create one ideal
+typographic engine. It doesn’t work this way. What we can do with it? We can
+easily create and maintain small, simple, full-tested and single responsible
+modules. After this we can compose bunch of these well done modules for every
+specific situation we need, and everybody will be happy with it’s
+own ideal text transformer.
+
+
 ## License
 
 [textr-npm]: https://www.npmjs.com/browse/keyword/textr
