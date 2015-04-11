@@ -21,8 +21,8 @@ describe('textr', function() {
     it('should process text', function() {
       var tf = textr();
       tf.should.be.a.Function;
-      tf.should.have.property('process');
-      tf.process.should.be.a.Function;
+      tf.should.have.property('exec');
+      tf.exec.should.be.a.Function;
       tf('hello').should.be.equal('hello');
     });
 
@@ -53,19 +53,19 @@ describe('textr', function() {
       ;
       var tf = textr()
         .use(one, two)
-        .process('hello world')
+        .exec('hello world')
         .should.be.equal('<h1>Hello World</h1>')
       ;
     });
 
   });
 
-  describe('process', function() {
+  describe('exec', function() {
 
     it('should apply transformers to given text', function() {
       textr()
         .use(capitalize)
-        .process('hello world')
+        .exec('hello world')
         .should.be.equal('Hello World')
       ;
     });
@@ -74,7 +74,7 @@ describe('textr', function() {
       textr()
         .use(capitalize)
         .use(headline(1))
-        .process('hello world')
+        .exec('hello world')
         .should.be.equal('<h1>Hello World</h1>')
       ;
     });
@@ -86,7 +86,7 @@ describe('textr', function() {
       .use(function(text, opts) {
         return text + opts.locale;
       })
-      .process('locale: ')
+      .exec('locale: ')
       .should.be.equal('locale: ru')
     ;
   });

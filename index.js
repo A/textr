@@ -25,7 +25,7 @@ module.exports = function textr(options) {
    *        // register plugins
    *        .use(quotes)
    *        .use(capitalize)
-   *        .process(text)
+   *        .exec(text)
    *
    *      // save transformer to reuse
    *      tf = textr()
@@ -35,20 +35,20 @@ module.exports = function textr(options) {
    *      return ['Hello', 'world'].map(tf);
    *
    * @constructor
-   * @alias process
-   * @return {object:{process:fn,use:fn}}
-   * @return {fn:process}
+   * @alias exec
+   * @return {object:{exec:fn,use:fn}}
+   * @return {fn:exec}
    * @api public
    */
   function api() {
-    return process.apply(null, arguments);
+    return exec.apply(null, arguments);
   }
 
   /**
-   * Expose `process`, `use` and `mws` as properties
+   * Expose `exec`, `use` and `mws` as properties
    * of the `api`
    */
-  api.process = process;
+  api.exec = exec;
   api.use = use;
   api.mws = mws;
 
@@ -60,7 +60,7 @@ module.exports = function textr(options) {
    * @return {string} text
    * @api public
    */
-  function process(text) {
+  function exec(text) {
     return mws.reduce(function(text, mw) {
       return mw(text, options);
     }, text);

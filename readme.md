@@ -56,13 +56,13 @@ Create new textr transform function (`tf`).
 
 Register transform function as `tf` middleware.
 
-### tf.process(text)
+### tf.exec(text)
 
 Process given text by the middlewares.
 
 ### tf(text)
 
-Identical to `tf.process(text)`.
+Identical to `tf.exec(text)`.
 
 
 ## Plugins API
