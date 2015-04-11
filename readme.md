@@ -6,7 +6,7 @@
 [![Dependency Status][depstat-image]][depstat-url]
 [![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
-> Textr is simple framework to compose text transformation functions.
+> Textr is simple framework to compose text transformation functions
 
 Textr is good instrument to create modular tools to [make your typography better][bad-habits].
 It can compose any functions that get text, transform it and return result of
@@ -76,6 +76,16 @@ function myPlugin(text, options) {
   return text;
 }
 ```
+
+
+## Idea behind textr
+
+Typography for everybody! At the same time it’s impossible to create one ideal
+typographic engine. It doesn’t work this way. What we can do with it? We can
+easily create and maintain small, simple, full-tested and single responsible
+modules. After this we can compose bunch of these well done modules for every
+specific situation we need, and everybody will be happy with it’s
+own ideal text transformer.
 
 
 ## License
