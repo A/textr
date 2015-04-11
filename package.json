@@ -2,19 +2,17 @@
   "name": "textr",
   "version": "0.1.1",
   "description": "Tiny and extendable text transforming framework",
-  "main": "index.es5.js",
+  "main": "index.js",
   "scripts": {
-    "coverage": "istanbul cover _mocha -- --require babel/register",
+    "coverage": "istanbul cover _mocha",
     "precoveralls": "npm run coverage",
     "coveralls": "coveralls < coverage/lcov.info",
-    "lint": "jscs --esnext -p airbnb index.js test.js",
+    "lint": "jscs -p airbnb index.js test.js",
     "pretest": "npm run lint",
     "precommit": "npm test",
-    "test": "mocha --require babel/register",
+    "test": "mocha",
     "tdd": "npm test -- --watch",
-    "transpile": "babel index.js > index.es5.js",
-    "prepublish": "npm run transpile",
-    "postpublish": "rm *.es5.js && git push --follow-tags"
+    "postpublish": "git push --follow-tags"
   },
   "keywords": [
     "typographic"
@@ -22,7 +20,6 @@
   "author": "Anton Shuvalov <anton@shuvalov.info>",
   "license": "MIT",
   "devDependencies": {
-    "babel": "^5.0.0",
     "mocha": "^2.2.4",
     "coveralls": "^2.11.2",
     "istanbul": "^0.3.11",

@@ -1,7 +1,14 @@
-export default ()=> {
-  let mws = [];
-  const parse = (text)=> mws.reduce((text, mw) => mw(text), text);
-  parse.use = (mw) => {
+'use strict';
+
+module.exports = function processor() {
+  var mws = [];
+  function parse(text) {
+    return mws.reduce(function(text, mw) {
+      return mw(text);
+    }, text)
+  }
+
+  parse.use = function(mw) {
     mws.push(mw);
     return parse;
   }
