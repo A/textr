@@ -6,12 +6,19 @@
 [![Dependency Status][depstat-image]][depstat-url]
 [![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
-> Tiny and extendable text transforming framework
+> Textr is simple framework to compose text transformation functions.
 
-Superslim text transforming framework. With `textr` you can easy
-to create modular typographers with your very own text transformation logic
-to use it on many cases like just fix quotes or even convert your text
-from markdown to html.
+Textr is good instrument to create modular tools to [make your typography better][bad-habbits].
+
+Textr can compose any functions that get text, transform it and return result of
+processing just like unix pipes. For example, check out few: [`typographic-quotes`][typographic-quotes],
+[typographic-math-symbols][https://github.com/matmuchrapna/typographic-math-symbols],
+[typographic-em-dashes][typographic-em-dashes] and [typographic-ellipses][typographic-ellipses].
+
+All `textr` plugins are available on npm, labelled with [textr][textr-npm]
+keyword.
+
+Also you can easily create new one. Don’t be scared.
 
 
 ## Install
@@ -27,44 +34,36 @@ npm install --save textr
 var textr    = require('textr');
 var ellipses = require('typographic-ellipses');
 var spaces   = require('typographic-single-spaces');
-
-// you can wrap plugins to partial apply their options
-// basically for possible locale parameter
 var _quotes  = require('typographic-quotes');
-var quotes   = function (text) { return _quotes(text, 'ru' ); };
 
-// Create new text transformer
-// and register your plugins
+// Create new text transformer by compose yours
 tf = textr()
   .use(ellipses)
   .use(spaces)
-  .use(quotes);
+  .use(quotes({ locale: 'ru' }))
+;
 
 // then just send some text to the transformer
 tf('Hello "world"...'); // Hello “world”…
+
+
+// If some function is expected for other options besides the text
+// then you can write simple wrapper to set them:
+function quotes(opts) {
+  return function(input) {
+    return _quotes(input, opts && opts.locale);
+  }
+}
 ```
-
-## Textr plugins
-
-All textr plugins are available on npm, labelled with [typographic][typographic]
-keyword.
-
-Also you can easily create new one. Don’t be scared. Each plugin is just
-a function that get text, transform it and return result of processing.
-For example this is the source of the [`typographic-ellipses`](ellipses) plugin:
-
-```js
-module.exports = function(input) { return input.replace(/\.{3}/gim, '…'); }
-```
-
-[typographic]: https://www.npmjs.com/browse/keyword/typographic
-[ellipses]: https://github.com/matmuchrapna/typographic-ellipses
 
 
 ## License
 
+[textr-npm]: https://www.npmjs.com/browse/keyword/textr
+
 MIT © [Shuvalov Anton](http://shuvalov.info)
 
+[bad-habits]: http://practicaltypography.com/typewriter-habits.html
 
 [npm-url]: https://npmjs.org/package/textr
 [npm-image]: http://img.shields.io/npm/v/textr.svg
@@ -80,3 +79,7 @@ MIT © [Shuvalov Anton](http://shuvalov.info)
 
 [depstat-dev-url]: https://david-dm.org/shuvalov-anton/textr
 [depstat-dev-image]: https://david-dm.org/shuvalov-anton/textr/dev-status.svg
+
+[typographic-quotes]: https://github.com/matmuchrapna/typographic-quotes
+[typographic-em-dashes]: https://github.com/matmuchrapna/typographic-em-dashes
+[typographic-ellipses]: https://github.com/matmuchrapna/typographic-ellipses
