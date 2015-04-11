@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Textr by shuvalov-anton</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Textr</h1>
+      <h2 class="project-tagline">Textr is simple framework to compose text transformation functions.</h2>
+      <a href="https://github.com/shuvalov-anton/textr" class="btn">View on GitHub</a>
+      <a href="https://github.com/shuvalov-anton/textr/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/shuvalov-anton/textr/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="textr" class="anchor" href="#textr" aria-hidden="true"><span class="octicon octicon-link"></span></a>textr</h1>
+
+<p><a href="https://npmjs.org/package/textr"><img src="http://img.shields.io/npm/v/textr.svg" alt="NPM version"></a>
+<a href="https://travis-ci.org/shuvalov-anton/textr"><img src="http://img.shields.io/travis/shuvalov-anton/textr.svg" alt="Build Status"></a>
+<a href="https://coveralls.io/r/shuvalov-anton/textr"><img src="http://img.shields.io/coveralls/shuvalov-anton/textr.svg" alt="Coveralls Status"></a>
+<a href="https://david-dm.org/shuvalov-anton/textr"><img src="https://david-dm.org/shuvalov-anton/textr.svg" alt="Dependency Status"></a>
+<a href="https://david-dm.org/shuvalov-anton/textr"><img src="https://david-dm.org/shuvalov-anton/textr/dev-status.svg" alt="DevDependency Status"></a></p>
+
+<blockquote>
+<p>Textr is simple framework to compose text transformation functions.</p>
+</blockquote>
+
+<p>Textr is good instrument to create modular tools to <a href="http://practicaltypography.com/typewriter-habits.html">make your typography better</a>.
+It can compose any functions that get text, transform it and return result of
+processing. For example, check out few: <a href="https://github.com/matmuchrapna/typographic-quotes">typographic-quotes</a>,
+<a href="https://github.com/matmuchrapna/typographic-math-symbols">typographic-math-symbols</a>,
+<a href="https://github.com/matmuchrapna/typographic-em-dashes">typographic-em-dashes</a> and <a href="https://github.com/matmuchrapna/typographic-ellipses">typographic-ellipses</a>.</p>
+
+<p>All <code>textr</code> plugins are available on npm, labelled with <a href="https://www.npmjs.com/browse/keyword/textr">textr</a>
+keyword. Also you can easily create new one. Don’t be scared.</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<pre><code>npm install --save textr
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> textr    <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>textr<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> ellipses <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>typographic-ellipses<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> spaces   <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>typographic-single-spaces<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> _quotes  <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>typographic-quotes<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// Create new text transformer by compose yours</span>
+tf <span class="pl-k">=</span> textr()
+  .use(ellipses)
+  .use(spaces)
+  .use(quotes({ locale<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ru<span class="pl-pds">'</span></span> }))
+;
+
+<span class="pl-c">// then just send some text to the transformer</span>
+tf(<span class="pl-s"><span class="pl-pds">'</span>Hello "world"...<span class="pl-pds">'</span></span>); <span class="pl-c">// Hello “world”…</span>
+
+
+<span class="pl-c">// If some function is expected for other options besides the text</span>
+<span class="pl-c">// then you can write simple wrapper to set them:</span>
+<span class="pl-k">function</span> <span class="pl-en">quotes</span>(<span class="pl-smi">opts</span>) {
+  <span class="pl-k">return</span> <span class="pl-k">function</span>(<span class="pl-smi">input</span>) {
+    <span class="pl-k">return</span> _quotes(input, opts <span class="pl-k">&amp;&amp;</span> opts.locale);
+  }
+}</pre></div>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT © <a href="http://shuvalov.info">Shuvalov Anton</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/shuvalov-anton/textr">Textr</a> is maintained by <a href="https://github.com/shuvalov-anton">shuvalov-anton</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
