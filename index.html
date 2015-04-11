@@ -38,8 +38,10 @@ processing. For example, check out few: <a href="https://github.com/matmuchrapna
 <a href="https://github.com/matmuchrapna/typographic-math-symbols">typographic-math-symbols</a>,
 <a href="https://github.com/matmuchrapna/typographic-em-dashes">typographic-em-dashes</a> and <a href="https://github.com/matmuchrapna/typographic-ellipses">typographic-ellipses</a>.</p>
 
-<p>All <code>textr</code> plugins are available on npm, labelled with <a href="https://www.npmjs.com/browse/keyword/textr">textr</a>
-keyword. Also you can easily create new one. Don’t be scared.</p>
+<p>Plugins are available on npm, labelled with <a href="https://www.npmjs.com/browse/keyword/textr">textr</a>
+keyword. Either of the plugins has good test coverage, that makes <code>textr</code> transformers
+easy to support even if one of them will be broken or useless for you. Also you
+can easily create new one. Don’t be scared.</p>
 
 <h2>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
@@ -53,26 +55,52 @@ keyword. Also you can easily create new one. Don’t be scared.</p>
 <div class="highlight highlight-js"><pre><span class="pl-k">var</span> textr    <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>textr<span class="pl-pds">'</span></span>);
 <span class="pl-k">var</span> ellipses <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>typographic-ellipses<span class="pl-pds">'</span></span>);
 <span class="pl-k">var</span> spaces   <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>typographic-single-spaces<span class="pl-pds">'</span></span>);
-<span class="pl-k">var</span> _quotes  <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>typographic-quotes<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> quotes  <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>typographic-quotes<span class="pl-pds">'</span></span>);
 
 <span class="pl-c">// Create new text transformer by compose yours</span>
-tf <span class="pl-k">=</span> textr()
+tf <span class="pl-k">=</span> textr({ locale<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ru<span class="pl-pds">'</span></span>})
   .use(ellipses)
   .use(spaces)
-  .use(quotes({ locale<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ru<span class="pl-pds">'</span></span> }))
+  .use(quotes)
 ;
 
 <span class="pl-c">// then just send some text to the transformer</span>
-tf(<span class="pl-s"><span class="pl-pds">'</span>Hello "world"...<span class="pl-pds">'</span></span>); <span class="pl-c">// Hello “world”…</span>
+tf(<span class="pl-s"><span class="pl-pds">'</span>Hello "world"...<span class="pl-pds">'</span></span>); <span class="pl-c">// Hello “world”…</span></pre></div>
 
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
 
-<span class="pl-c">// If some function is expected for other options besides the text</span>
-<span class="pl-c">// then you can write simple wrapper to set them:</span>
-<span class="pl-k">function</span> <span class="pl-en">quotes</span>(<span class="pl-smi">opts</span>) {
-  <span class="pl-k">return</span> <span class="pl-k">function</span>(<span class="pl-smi">input</span>) {
-    <span class="pl-k">return</span> _quotes(input, opts <span class="pl-k">&amp;&amp;</span> opts.locale);
-  }
-}</pre></div>
+<h3>
+<a id="textr-1" class="anchor" href="#textr-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>textr()</h3>
+
+<p>Create new textr transform function (<code>tf</code>).</p>
+
+<h3>
+<a id="tfusefn" class="anchor" href="#tfusefn" aria-hidden="true"><span class="octicon octicon-link"></span></a>tf.use(...fn)</h3>
+
+<p>Register transform function as <code>tf</code> middleware.</p>
+
+<h3>
+<a id="tfprocesstext" class="anchor" href="#tfprocesstext" aria-hidden="true"><span class="octicon octicon-link"></span></a>tf.process(text)</h3>
+
+<p>Process given text by the middlewares.</p>
+
+<h3>
+<a id="tftext" class="anchor" href="#tftext" aria-hidden="true"><span class="octicon octicon-link"></span></a>tf(text)</h3>
+
+<p>Identical to <code>tf.process(text)</code>.</p>
+
+<h2>
+<a id="plugins-api" class="anchor" href="#plugins-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plugins API</h2>
+
+<p>Each plugin will be called with 2 arguments: text and options
+setted on <code>textr()</code>.</p>
+
+<pre><code>function myPlugin(text, options) {
+  console.log(options); // { locale: 'ru' }
+  return text;
+}
+</code></pre>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
