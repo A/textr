@@ -44,6 +44,20 @@ describe('textr', function() {
       ;
     });
 
+    it('should use itself as transform', function() {
+      var one = textr()
+        .use(capitalize)
+      ;
+      var two = textr()
+        .use(headline(1))
+      ;
+      var tf = textr()
+        .use(one, two)
+        .parse('hello world')
+        .should.be.equal('<h1>Hello World</h1>')
+      ;
+    });
+
   });
 
   describe('parse', function() {
