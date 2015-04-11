@@ -11,7 +11,7 @@
 Textr is good instrument to create modular tools to [make your typography better][bad-habits].
 It can compose any functions that get text, transform it and return result of
 processing. For example, check out few: [`typographic-quotes`][typographic-quotes],
-[typographic-math-symbols][https://github.com/matmuchrapna/typographic-math-symbols],
+[typographic-math-symbols][typographic-math-symbols],
 [typographic-em-dashes][typographic-em-dashes] and [typographic-ellipses][typographic-ellipses].
 
 All `textr` plugins are available on npm, labelled with [textr][textr-npm]
@@ -80,5 +80,6 @@ MIT © [Shuvalov Anton](http://shuvalov.info)
 [depstat-dev-image]: https://david-dm.org/shuvalov-anton/textr/dev-status.svg
 
 [typographic-quotes]: https://github.com/matmuchrapna/typographic-quotes
+[typographic-math-symbols]: https://github.com/matmuchrapna/typographic-math-symbols
 [typographic-em-dashes]: https://github.com/matmuchrapna/typographic-em-dashes
 [typographic-ellipses]: https://github.com/matmuchrapna/typographic-ellipses
