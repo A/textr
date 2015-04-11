@@ -81,4 +81,15 @@ describe('textr', function() {
 
   });
 
+  describe('params', function() {
+    textr({ locale: 'ru' })
+      .use(function(text, opts) {
+        return text + opts.locale;
+      })
+      .parse('locale: ')
+      .should.be.equal('locale: ru')
+    ;
+  });
+
+
 });
