@@ -98,12 +98,26 @@ tf(<span class="pl-s"><span class="pl-pds">'</span>Hello  "world"...<span class=
 <h3>
 <a id="tftext" class="anchor" href="#tftext" aria-hidden="true"><span class="octicon octicon-link"></span></a>tf(text)</h3>
 
-<p>Identical to <code>tf.exec(text)</code>.</p>
+<p>Identical to <code>tf.exec(text)</code>. This alias makes <code>tf</code> just regular transform
+function, that you can register as middleware for <code>textr</code> as well.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> typorgapher <span class="pl-k">=</span> textr().use(typography, tools, here)
+<span class="pl-k">var</span> autocorrector <span class="pl-k">=</span> textr().use(autocorrection, things)
+<span class="pl-k">var</span> smiles <span class="pl-k">=</span> textr().use(text, to, smiles, goodies)
+
+<span class="pl-k">var</span> tf <span class="pl-k">=</span> textr()
+  .use(typographer)
+  .use(autocorrector)
+  .use(smiles)
+;
+
+tf(text); <span class="pl-c">// oh, that's awesome!11</span>
+</pre></div>
 
 <h2>
 <a id="plugins-api" class="anchor" href="#plugins-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plugins API</h2>
 
-<p>Each plugin will be called with 2 arguments: text and options
+<p>Each plugin will be called with 2 arguments: <code>text</code> and <code>options</code>
 setted on <code>textr()</code>.</p>
 
 <pre><code>function myPlugin(text, options) {
