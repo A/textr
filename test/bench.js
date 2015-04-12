@@ -53,9 +53,9 @@ function bench() {
   var endedAt = startedAt + 1000;
   var i = 0;
   var tf;
-  if (program.cycles) { tf = textr().use.apply(null, tfs); }
+  if (!program.cycles) { tf = textr().use.apply(null, tfs); }
   do {
-    if (!program.cycles) { tf = textr().use.apply(null, tfs); }
+    if (program.cycles) { tf = textr().use.apply(null, tfs); }
     res = tf(buf);
     i++;
   } while (+new Date() < endedAt);
