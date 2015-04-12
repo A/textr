@@ -72,8 +72,8 @@ module.exports = function textr(options) {
   function exec(text) {
     return mws.reduce(function(text, mw) {
       return mw(text, options) || text;
-
     }, text);
+
   }
 
   /**
@@ -83,7 +83,7 @@ module.exports = function textr(options) {
    * @api public
    */
   function use() {
-    Array.prototype.push.apply(mws, arguments);
+    [].push.apply(mws, arguments);
     return api;
   }
 
