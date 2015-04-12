@@ -7,16 +7,20 @@
     "coverage": "istanbul cover _mocha",
     "precoveralls": "npm run coverage",
     "coveralls": "coveralls < coverage/lcov.info",
-    "test": "mocha --require should",
+    "test": "mocha",
     "tdd": "npm test -- --watch",
     "postpublish": "git push --follow-tags"
   },
   "keywords": [
-    "typographic", "textr", "transformer", "text"
+    "typographic",
+    "textr",
+    "transformer",
+    "text"
   ],
   "author": "Anton Shuvalov <anton@shuvalov.info>",
   "license": "MIT",
   "devDependencies": {
+    "commander": "^2.7.1",
     "coveralls": "^2.11.2",
     "istanbul": "^0.3.11",
     "mocha": "^2.2.4",
