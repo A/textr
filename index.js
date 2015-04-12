@@ -71,7 +71,8 @@ module.exports = function textr(options) {
    */
   function exec(text) {
     return mws.reduce(function(text, mw) {
-      return mw(text, options);
+      return mw(text, options) || text;
+
     }, text);
   }
 
