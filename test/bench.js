@@ -7,6 +7,20 @@ var textr   = require('../');
 var program = require('commander');
 var pkg     = require('../package');
 
+/**
+ * Simple benchmark which can be used as CLI in the future.
+ *
+ * @example
+ *
+ *      $ echo 'hello     "world"' > test
+ *      $ cat test | bench.js -t typographic-single-spaces,typographic-quotes
+ *
+ *      hello "world"
+ *      1654434 cycles per second%
+ *
+ *
+ *
+ */
 program
   .version(pkg.version)
   .option('-c, --cycles', 'create new tf on every cycle')
