@@ -79,6 +79,18 @@ describe('textr', function() {
       ;
     });
 
+    it('should not miss text if on of the middlewares return falsy', function() {
+      textr()
+        .use(function (text, ctx) {
+          // define mw that not transforming text;
+          if ('undefined' === typeof navigator) { return; }
+          ctx.locale = navigator.locale;
+        })
+        .exec('some text')
+        .should.be.equal('some text')
+      ;
+    });
+
   });
 
   describe('params', function() {
