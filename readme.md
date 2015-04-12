@@ -70,7 +70,23 @@ Process given text by the middlewares.
 
 ### tf(text)
 
-Identical to `tf.exec(text)`.
+Identical to `tf.exec(text)`. This alias makes `tf` just regular transform
+function, that you can register as middleware for `textr` as well.
+
+```js
+var typorgapher = textr().use(typography, tools, here)
+var autocorrector = textr().use(autocorrection, things)
+var smiles = textr().use(text, to, smiles, goodies)
+
+var tf = textr()
+  .use(typographer)
+  .use(autocorrector)
+  .use(smiles)
+;
+
+tf(text); // oh, that's awesome!11
+
+```
 
 
 ## Plugins API
