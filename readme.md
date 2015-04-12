@@ -95,12 +95,11 @@ Each plugin will be called with 2 arguments: `text` and `options`
 setted on `textr()`.
 
 ```
-function myPlugin(text, options) {
+function plugin(text, options) {
   console.log(options); // { locale: 'ru' }
   return text;
 }
 ```
-
 
 
 ## License
