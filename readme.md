@@ -91,7 +91,7 @@ tf(text); // oh, that's awesome!11
 
 ## Plugins API
 
-Each plugin will be called with 2 arguments: text and options
+Each plugin will be called with 2 arguments: `text` and `options`
 setted on `textr()`.
 
 ```
