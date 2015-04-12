@@ -1,6 +1,14 @@
 'use strict';
 
 
+/**
+ * Create new transform function
+ *
+ * @constructor
+ * @return {object:{exec:fn,use:fn}}
+ * @return {fn:exec}
+ * @api public
+ */
 module.exports = function textr(options) {
 
   /**
@@ -36,9 +44,6 @@ module.exports = function textr(options) {
    *
    * @constructor
    * @alias exec
-   * @return {object:{exec:fn,use:fn}}
-   * @return {fn:exec}
-   * @api public
    */
   function api() {
     return exec.apply(null, arguments);
@@ -47,6 +52,10 @@ module.exports = function textr(options) {
   /**
    * Expose `exec`, `use` and `mws` as properties
    * of the `api`
+   *
+   * @alias exec
+   * @alias use
+   * @alias mws
    */
   api.exec = exec;
   api.use = use;
