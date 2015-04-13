@@ -93,7 +93,7 @@ describe('textr', function() {
 
   });
 
-  describe('params', function() {
+  describe('options', function() {
     it('should pass options through each middleware', function() {
       textr({ locale: 'ru' })
         .use(function(text, opts) {
