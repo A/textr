@@ -94,13 +94,15 @@ describe('textr', function() {
   });
 
   describe('params', function() {
-    textr({ locale: 'ru' })
-      .use(function(text, opts) {
-        return text + opts.locale;
-      })
-      .exec('locale: ')
-      .should.be.equal('locale: ru')
-    ;
+    it('should pass options through each middleware', function() {
+      textr({ locale: 'ru' })
+        .use(function(text, opts) {
+          return text + opts.locale;
+        })
+        .exec('locale: ')
+        .should.be.equal('locale: ru')
+      ;
+    });
   });
 
 
