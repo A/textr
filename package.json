@@ -2,6 +2,7 @@
   "name": "textr",
   "version": "0.2.0",
   "description": "Tiny and extendable text transforming framework",
+  "homepage": "http://shuvalov-anton.github.io/textr/",
   "main": "index.js",
   "repository": {
     "type": "git",
