@@ -3,6 +3,10 @@
   "version": "0.2.0",
   "description": "Tiny and extendable text transforming framework",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shuvalov-anton/textr"
+  },
   "scripts": {
     "coverage": "istanbul cover _mocha",
     "precoveralls": "npm run coverage",
