@@ -17,6 +17,10 @@
     "text"
   ],
   "author": "Anton Shuvalov <anton@shuvalov.info>",
+  "maintainers": [
+    "Anton Shuvalov <anton@shuvalov.info>",
+    "Vladimir Starkov <matmuchrapna@gmail.com> (http://vstarkov.com/)"
+  ],
   "license": "MIT",
   "devDependencies": {
     "commander": "^2.7.1",
