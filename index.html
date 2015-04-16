@@ -1,145 +1,41 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Textr by shuvalov-anton</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Textr</h1>
-      <h2 class="project-tagline">Textr is simple framework to compose text transformation functions.</h2>
-      <a href="https://github.com/shuvalov-anton/textr" class="btn">View on GitHub</a>
-      <a href="https://github.com/shuvalov-anton/textr/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/shuvalov-anton/textr/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
-
-    <section class="main-content">
-      <h1>
-<a id="textr" class="anchor" href="#textr" aria-hidden="true"><span class="octicon octicon-link"></span></a>textr</h1>
-
-<p><a href="https://npmjs.org/package/textr"><img src="http://img.shields.io/npm/v/textr.svg" alt="NPM version"></a>
-<a href="https://travis-ci.org/shuvalov-anton/textr"><img src="http://img.shields.io/travis/shuvalov-anton/textr.svg" alt="Build Status"></a>
-<a href="https://coveralls.io/r/shuvalov-anton/textr"><img src="http://img.shields.io/coveralls/shuvalov-anton/textr.svg" alt="Coveralls Status"></a>
-<a href="https://david-dm.org/shuvalov-anton/textr"><img src="https://david-dm.org/shuvalov-anton/textr.svg" alt="Dependency Status"></a>
-<a href="https://david-dm.org/shuvalov-anton/textr"><img src="https://david-dm.org/shuvalov-anton/textr/dev-status.svg" alt="DevDependency Status"></a></p>
-
-<blockquote>
-<p>Textr is simple framework to compose text transformation functions</p>
-</blockquote>
-
-<p>Textr is good instrument to create modular tools to <a href="http://practicaltypography.com/typewriter-habits.html">make your typography better</a>.
-It can compose any functions that get text, transform it and return result of
-processing. For example, check out few: <a href="https://github.com/matmuchrapna/typographic-quotes">typographic-quotes</a>,
-<a href="https://github.com/matmuchrapna/typographic-math-symbols">typographic-math-symbols</a>,
-<a href="https://github.com/matmuchrapna/typographic-em-dashes">typographic-em-dashes</a> and <a href="https://github.com/matmuchrapna/typographic-ellipses">typographic-ellipses</a>.</p>
-
-<p>Plugins are available on npm, labelled with <a href="https://www.npmjs.com/browse/keyword/textr">textr</a>
-keyword. Either of the plugins has good test coverage, that makes <code>textr</code> transformers
-easy to support even if one of them will be broken or useless for you. Also you
-can easily create new one. Don’t be scared.</p>
-
-<h2>
-<a id="idea-behind-textr" class="anchor" href="#idea-behind-textr" aria-hidden="true"><span class="octicon octicon-link"></span></a>Idea behind textr</h2>
-
-<p>Typography for everybody! At the same time it’s impossible to create one ideal
-typographic engine. It doesn’t work this way. What we can do with it? We can
-easily create and maintain small, simple, full-tested and single responsible
-modules. After this we can compose bunch of these well done modules for every
-specific situation we need, and everybody will be happy with it’s
-own ideal text transformer.</p>
-
-<h2>
-<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
-
-<pre><code>npm install --save textr
-</code></pre>
-
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
-
-<div class="highlight highlight-js"><pre><span class="pl-k">var</span> textr    <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>textr<span class="pl-pds">'</span></span>);
-<span class="pl-k">var</span> ellipses <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>typographic-ellipses<span class="pl-pds">'</span></span>);
-<span class="pl-k">var</span> spaces   <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>typographic-single-spaces<span class="pl-pds">'</span></span>);
-<span class="pl-k">var</span> quotes  <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>typographic-quotes<span class="pl-pds">'</span></span>);
-
-<span class="pl-c">// Create new text transformer by compose yours</span>
-tf <span class="pl-k">=</span> textr({ locale<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ru<span class="pl-pds">'</span></span>})
-  .use(ellipses)
-  .use(spaces)
-  .use(quotes)
-;
-
-<span class="pl-c">// then just send some text to the transformer</span>
-tf(<span class="pl-s"><span class="pl-pds">'</span>Hello  "world"...<span class="pl-pds">'</span></span>); <span class="pl-c">// Hello «world»…</span></pre></div>
-
-<h2>
-<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
-
-<h3>
-<a id="textr-1" class="anchor" href="#textr-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>textr()</h3>
-
-<p>Create new textr transform function (<code>tf</code>).</p>
-
-<h3>
-<a id="tfusefn" class="anchor" href="#tfusefn" aria-hidden="true"><span class="octicon octicon-link"></span></a>tf.use(...fn)</h3>
-
-<p>Register transform function as <code>tf</code> middleware.</p>
-
-<h3>
-<a id="tfexectext" class="anchor" href="#tfexectext" aria-hidden="true"><span class="octicon octicon-link"></span></a>tf.exec(text)</h3>
-
-<p>Process given text by the middlewares.</p>
-
-<h3>
-<a id="tftext" class="anchor" href="#tftext" aria-hidden="true"><span class="octicon octicon-link"></span></a>tf(text)</h3>
-
-<p>Identical to <code>tf.exec(text)</code>. This alias makes <code>tf</code> just regular transform
-function, that you can register as middleware for <code>textr</code> as well.</p>
-
-<div class="highlight highlight-js"><pre><span class="pl-k">var</span> typorgapher <span class="pl-k">=</span> textr().use(typography, tools, here)
-<span class="pl-k">var</span> autocorrector <span class="pl-k">=</span> textr().use(autocorrection, things)
-<span class="pl-k">var</span> smiles <span class="pl-k">=</span> textr().use(text, to, smiles, goodies)
-
-<span class="pl-k">var</span> tf <span class="pl-k">=</span> textr()
-  .use(typographer)
-  .use(autocorrector)
-  .use(smiles)
-;
-
-tf(text); <span class="pl-c">// oh, that's awesome!11</span>
-</pre></div>
-
-<h2>
-<a id="plugins-api" class="anchor" href="#plugins-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plugins API</h2>
-
-<p>Each plugin will be called with 2 arguments: <code>text</code> and <code>options</code>
-setted on <code>textr()</code>.</p>
-
-<pre><code>function myPlugin(text, options) {
-  console.log(options); // { locale: 'ru' }
-  return text;
-}
-</code></pre>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
-
-<p>MIT © <a href="http://shuvalov.info">Shuvalov Anton</a></p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/shuvalov-anton/textr">Textr</a> is maintained by <a href="https://github.com/shuvalov-anton">shuvalov-anton</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Textr. Modular typografic framework on JavaScript</title>
+  <link type="text/css" rel="stylesheet" media="all" href="css/app.0.0.8.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="headline">
+      <span class="headline__title">Textr.</span>
+      <span class="headline__subtitle">Modular typographic framework on JavaScript</span>
+    </h1>
+  </div>
+  <div class="container description">
+    <p>Typography for everybody! At the same time it’s impossible to create one ideal
+    typographic engine. It doesn’t work this way. What we can do with it? We can
+    easily create and maintain small, simple, full-tested and single responsible
+    modules. After this we can compose bunch of these well done modules for every
+    specific situation we need, and everybody will be happy with it’s
+    own ideal text transformer.</p>
+  </div>
+  <div class="typograph">
+    <div id="app"></div>
+  </div>
+  <div class="container description">
+    <p>Textr is good instrument to create modular tools to <a href="http://practicaltypography.com/typewriter-habits.html">make your typography better</a>.  It can compose any functions that get text, transform it and return result of
+    processing. For example, check out few: <a href="https://github.com/matmuchrapna/typographic-quotes">typographic-quotes</a>,
+    <a href="https://github.com/matmuchrapna/typographic-math-symbols">typographic-math-symbols</a>,
+    <a href="https://github.com/matmuchrapna/typographic-em-dashes">typographic-em-dashes</a> and <a href="https://github.com/matmuchrapna/typographic-ellipses">typographic-ellipses</a>.</p>
+    <p>Plugins are available on npm, labelled with <a href="https://www.npmjs.com/browse/keyword/textr">textr</a>
+    keyword. Either of the plugins has good test coverage, that makes <code>textr</code> transformers
+    easy to support even if one of them will be broken or useless for you. Also you
+    can easily create new one. Don’t be scared.</p>
+  </div>
+  <div class="container footer">MIT © <a href="http://shuvalov.info">Shuvalov Anton</a></div>
+  <a href="https://github.com/shuvalov-anton/textr"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+  <script src="js/app.0.0.8.js"></script>
+</body>
 </html>
-
