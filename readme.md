@@ -106,7 +106,7 @@ function plugin(text, options) {
 
 [textr-npm]: https://www.npmjs.com/browse/keyword/textr
 
-MIT © [Shuvalov Anton](http://shuvalov.info)
+MIT © [Shuvalov Anton](http://shuvalov.info), [Vladimir Starkov](http://github.com/matmuchrapna)
 
 [bad-habits]: http://practicaltypography.com/typewriter-habits.html
 
