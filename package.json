@@ -1,6 +1,6 @@
 {
   "name": "textr",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Tiny and extendable text transforming framework",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,7 @@
     "precoveralls": "npm run coverage",
     "coveralls": "coveralls < coverage/lcov.info",
     "test": "mocha",
-    "tdd": "npm test -- --watch",
-    "postpublish": "git push --follow-tags"
+    "tdd": "npm test -- --watch"
   },
   "keywords": [
     "typographic",
