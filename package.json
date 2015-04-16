@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/shuvalov-anton/textr"
   },
+  "bugs": {
+    "url": "https://github.com/shuvalov-anton/textr/issues"
+  },
   "scripts": {
     "coverage": "istanbul cover _mocha",
     "precoveralls": "npm run coverage",
