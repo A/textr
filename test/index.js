@@ -1,4 +1,4 @@
-/* global describe, it, before */
+/* global describe, it, before, navigator */
 
 'use strict';
 
@@ -99,16 +99,17 @@ describe('textr', function() {
     });
 
     it('should support options to correct recursive usage', function() {
-      var pluginWithDefaultOptions = textr({ locale: 'ru', ownprop: true })
+      var pluginWithDefaultOptions = textr({ locale: 'ru', owner: true })
         .use(function(text, options) {
           options.locale.should.be.equal('en-us');
           options.direction.should.be.equal('ltr');
-          options.ownprop.should.be.true;
+          options.ownprop.should.be.equal(true);
+          options.other.should.be.equal('redefine');
         })
       ;
-      var tf = textr({ locale: 'en-us', direction: 'ltr' })
+      var tf = textr({ locale: 'en-us', direction: 'ltr', other: 'param' })
         .use(pluginWithDefaultOptions)
-        .exec('text');
+        .exec('text', { other: 'redefine' })
       ;
     });
   });
