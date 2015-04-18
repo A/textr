@@ -1,6 +1,5 @@
 'use strict';
 
-
 /**
  * Create new transform function
  *
@@ -73,7 +72,6 @@ module.exports = function textr(options) {
     return mws.reduce(function(text, mw) {
       return mw.apply(text, [text, options]) || text;
     }, text);
-
   }
 
   /**
