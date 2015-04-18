@@ -58,6 +58,13 @@ describe('textr', function() {
       ;
     });
 
+    it('should support string.prototype methods', function() {
+      var tf = textr()
+        .use(String.prototype.trim)
+      ;
+      tf('text\t\n').should.be.equal('text');
+    });
+
   });
 
   describe('exec', function() {
