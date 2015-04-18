@@ -99,7 +99,7 @@ describe('textr', function() {
     });
 
     it('should support options to correct recursive usage', function() {
-      var pluginWithDefaultOptions = textr({ locale: 'ru', owner: true })
+      var pluginWithDefaultOptions = textr({ locale: 'ru', ownprop: true })
         .use(function(text, options) {
           options.locale.should.be.equal('en-us');
           options.direction.should.be.equal('ltr');

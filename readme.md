@@ -57,15 +57,17 @@ tf('Hello  "world"...\n'); // Hello «world»…
 
 ## API
 
-### textr()
+### textr(defaults)
 
-Create new textr transform function (`tf`).
+Create new textr transform function (`tf`). You can pass default options when
+create new transform stack.
+
 
 ### tf.use(...fn)
 
 Register transform function as `tf` middleware.
 
-### tf.exec(text)
+### tf.exec(text, options)
 
 Process given text by the middlewares.
 
