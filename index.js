@@ -8,7 +8,7 @@
  * @return {fn:exec}
  * @api public
  */
-module.exports = function textr(options) {
+module.exports = function textr(defaults) {
 
   /**
    * list of registred middlewares
@@ -17,10 +17,11 @@ module.exports = function textr(options) {
   var mws = [];
 
   /**
-   * Options will be passed to either of the middlewares as second param.
+   * Default options will be passed to either of the middlewares as second param.
+   * You can redefine props by passing your options to `tf.exec()` as second arg.
    * @api private
    */
-  options = options || {};
+  defaults = defaults || {};
 
   /**
    * expose public interface of the textr
@@ -65,10 +66,12 @@ module.exports = function textr(options) {
   /**
    * process given text by the middlewares
    * @param {string} text
+   * @param {Object} options Options to merge with defaults
    * @return {string} text
    * @api public
    */
-  function exec(text) {
+  function exec(text, options) {
+    options = clone(defaults, options);
     return mws.reduce(function(text, mw) {
       return mw.apply(text, [text, options]) || text;
     }, text);
@@ -86,3 +89,18 @@ module.exports = function textr(options) {
   }
 
 };
+
+/**
+ * merge given objects to new one. Returns clone
+ * @param {Object} ...objects Objects to clone into the one new
+ * @return {Object}
+ */
+function clone() {
+  var res = {};
+  var length = arguments.length;
+  for (var i = 0; i < length; i++) {
+    var obj = arguments[i];
+    for (var k in obj) { res[k] = obj[k]; }
+  }
+  return res;
+}
