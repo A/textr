@@ -1,3 +1,8 @@
+0.2.2 / 2015-04-18
+==================
+
+* add support to use `String.prototype` methods as transform functions
+
 0.2.1 / 2015-04-16
 ==================
 
