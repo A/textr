@@ -48,10 +48,11 @@ tf = textr({ locale: 'ru'})
   .use(ellipses)
   .use(spaces)
   .use(quotes)
+  .use(String.prototype.trim)
 ;
 
 // then just send some text to the transformer
-tf('Hello  "world"...'); // Hello «world»…
+tf('Hello  "world"...\n'); // Hello «world»…
 ```
 
 ## API
@@ -100,6 +101,9 @@ function plugin(text, options) {
   return text;
 }
 ```
+
+To support `String.prototype` methods as transformation functions, `this` value
+is equal to the `text`.
 
 
 ## License
