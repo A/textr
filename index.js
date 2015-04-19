@@ -72,9 +72,11 @@ module.exports = function textr(defaults) {
    */
   function exec(text, options) {
     options = clone(defaults, options);
-    return mws.reduce(function(text, mw) {
-      return mw.apply(text, [text, options]) || text;
-    }, text);
+    var l = mws.length;
+    for (var i = 0; i < l; i++) {
+      text = mws[i].apply(text, [text, options]) || text;
+    }
+    return text;
   }
 
   /**
