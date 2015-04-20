@@ -17,7 +17,7 @@ module.exports = function textr(defaults) {
   var mws = [];
 
   /**
-   * Default options will be passed to either of the middlewares as second param.
+   * Default options will be passed to each middleware as second param.
    * You can redefine props by passing your options to `tf.exec()` as second arg.
    * @api private
    */
@@ -80,7 +80,7 @@ module.exports = function textr(defaults) {
   }
 
   /**
-   * Register either middleware and array of middlewares
+   * Register new middleware and array of middlewares
    * @param {...fn} ...middlewares
    * @return {api}
    * @api public
