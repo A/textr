@@ -1,3 +1,9 @@
+0.3.0 / 2015-04-21
+==================
+
+* add options as second argument for exec
+* now options are just clone of original options and defaults
+
 0.2.2 / 2015-04-18
 ==================
 
