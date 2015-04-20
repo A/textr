@@ -15,9 +15,7 @@ processing. For example, check out few: [typographic-quotes][typographic-quotes]
 [typographic-em-dashes][typographic-em-dashes] and [typographic-ellipses][typographic-ellipses].
 
 Plugins are available on npm, labelled with [textr][textr-npm]
-keyword. Either of the plugins has good test coverage, that makes `textr` transformers
-easy to support even if one of them will be broken or useless for you. Also you
-can easily create new one. Don’t be scared.
+keyword. Also you can easily create new one. Don’t be scared.
 
 ## Idea behind textr
 
