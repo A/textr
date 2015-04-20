@@ -1,6 +1,6 @@
 {
   "name": "textr",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Tiny and extendable text transforming framework",
   "homepage": "http://shuvalov-anton.github.io/textr/",
   "main": "index.js",
@@ -36,9 +36,6 @@
     "istanbul": "^0.3.11",
     "mocha": "^2.2.4",
     "mocha-lcov-reporter": "0.0.2",
-    "should": "^5.2.0",
-    "typographic-ellipses": "^1.0.9",
-    "typographic-quotes": "^1.1.0",
-    "typographic-single-spaces": "^1.0.0"
+    "should": "^5.2.0"
   }
 }
