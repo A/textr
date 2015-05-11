@@ -123,7 +123,7 @@ unification.
 
 [textr-npm]: https://www.npmjs.com/browse/keyword/textr
 
-MIT © [Shuvalov Anton](http://shuvalov.info), [Vladimir Starkov](http://github.com/matmuchrapna)
+MIT © [Shuvalov Anton](http://shuvalov.info), [Vladimir Starkov](https://iamstarkov.com)
 
 [bad-habits]: http://practicaltypography.com/typewriter-habits.html
 
