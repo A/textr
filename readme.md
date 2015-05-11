@@ -106,22 +106,35 @@ To support `String.prototype` methods as transformation functions, `this` value
 is equal to the `text`.
 
 
+## 'locale' option consistence
+
+tl;dr: Use [ISO 639][ISO] and rely on locale codes like these: `en-uk`,
+`en-us`, `zh-Hans`, `ru`, `da`, `sv`—regular values for `lang` attribute.
+
+Typography is locale dependent by it’s nature, that’s why `locale` option
+is most usable option and this is a good reason to be consistent about. We looked
+around and found that [ISO 639 standard][ISO] is very well fits us, the fact that
+it was chosen by w3c for defining lang attribute assure us to use this
+unification.
+
+[ISO]: http://www.wikiwand.com/en/List_of_ISO_639-1_codes
+
 ## License
 
 [textr-npm]: https://www.npmjs.com/browse/keyword/textr
 
-MIT © [Shuvalov Anton](http://shuvalov.info), [Vladimir Starkov](http://github.com/matmuchrapna)
+MIT © [Shuvalov Anton](http://shuvalov.info), [Vladimir Starkov](https://iamstarkov.com)
 
 [bad-habits]: http://practicaltypography.com/typewriter-habits.html
 
 [npm-url]: https://npmjs.org/package/textr
-[npm-image]: http://img.shields.io/npm/v/textr.svg
+[npm-image]: https://img.shields.io/npm/v/textr.svg
 
 [travis-url]: https://travis-ci.org/shuvalov-anton/textr
-[travis-image]: http://img.shields.io/travis/shuvalov-anton/textr.svg
+[travis-image]: https://img.shields.io/travis/shuvalov-anton/textr.svg
 
 [coveralls-url]: https://coveralls.io/r/shuvalov-anton/textr
-[coveralls-image]: http://img.shields.io/coveralls/shuvalov-anton/textr.svg
+[coveralls-image]: https://img.shields.io/coveralls/shuvalov-anton/textr.svg
 
 [depstat-url]: https://david-dm.org/shuvalov-anton/textr
 [depstat-image]: https://david-dm.org/shuvalov-anton/textr.svg
