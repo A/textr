@@ -105,8 +105,34 @@ function plugin(text, options) {
 To support `String.prototype` methods as transformation functions, `this` value
 is equal to the `text`.
 
+## Few words for plugin creatorsm
 
-## 'locale' option consistence
+:+1::tada: First off, you are awesome and thanks for taking the time
+to contribute! :tada::+1:
+
+### Testability
+
+As far as we want to go beyond monolythic typographic engines, then
+we (as ecosystem) need to have small atomic 100% covered with tests plugins.
+That’s why please have `index.js` and `test.js` in the repository
+and `.travis.yml` to validate pull-requests. Badges about npm version,
+passing tests and tests coverage are optionable, but preferred.
+
+Give a chance to [npm scripts][npmscripts] as cross-platform tool
+for automatization.
+
+### README
+
+Everyone will read README, and only ones—sources. Please include in your readme
+file following sections: package name, description, installation instructions,
+usage section with spec from tests and license note. License note is important
+for enterprise users. We want to create ecosystem, so it’s reasonable to have
+a link to textr in README’s plugins, good place for it is in the top,
+maybe in the short description.
+
+[npmscripts]: https://docs.npmjs.com/misc/scripts
+
+### 'locale' option consistence
 
 tl;dr: Use [ISO 639][ISO] and rely on locale codes like these: `en-uk`,
 `en-us`, `zh-Hans`, `ru`, `da`, `sv`—regular values for `lang` attribute.
