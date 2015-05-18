@@ -105,7 +105,7 @@ function plugin(text, options) {
 To support `String.prototype` methods as transformation functions, `this` value
 is equal to the `text`.
 
-## Few words for plugin creatorsm
+## Few words for plugin creators
 
 :+1::tada: First off, you are awesome and thanks for taking the time
 to contribute! :tada::+1:
