@@ -105,6 +105,8 @@ function plugin(text, options) {
 To support `String.prototype` methods as transformation functions, `this` value
 is equal to the `text`.
 
+There are plugins for [PostHTML](https://www.npmjs.com/package/posthtml-textr)
+
 ## Few words for plugin creators
 
 :+1::tada: First off, you are awesome and thanks for taking the time
