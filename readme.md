@@ -32,7 +32,6 @@ own ideal text transformer.
 npm install --save textr
 ```
 
-
 ## Usage
 
 ```js
@@ -52,6 +51,36 @@ tf = textr({ locale: 'ru'})
 // then just send some text to the transformer
 tf('Hello  "world"...\n'); // Hello «world»…
 ```
+
+## CLI
+
+Also, there is a [CLI package][cli] for running Textr under your terminal. You can install it typing:
+
+```
+npm install --global textr-cli
+```
+
+After installation, you can process files using `textr`-command, like this:
+
+```sh
+# load from file, transformers required through few -t flags
+$ textr foo.md -t typographic-quotes -t typographic-quotes
+
+# load from file, transformers required through one -t
+$ textr foo.md -t typographic-single-spaces,typographic-quotes
+
+# load through stdin, iso-locale equals ru, transformers using --transforms
+$ cat foo.md | textr -l ru --transforms=typographic-single-spaces
+
+# load through stdin, write result into file
+$ cat foo.md | textr -o bar.md
+```
+
+Take a look for more [usage examples][examples] and [CLI options][options].
+
+[cli]: https://github.com/denysdovhan/textr-cli
+[examples]: https://github.com/denysdovhan/textr-cli#usage
+[options]: https://github.com/denysdovhan/textr-cli#options
 
 ## API
 
