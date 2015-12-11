@@ -16,7 +16,8 @@
     "precoveralls": "npm run coverage",
     "coveralls": "coveralls < coverage/lcov.info",
     "test": "mocha",
-    "tdd": "npm test -- --watch"
+    "tdd": "npm test -- --watch",
+    "bench": "node -p \"i=1000000,s=+new Date;while(i--){require('.')('hello')};new Date-s+'ms'\""
   },
   "keywords": [
     "typographic",
@@ -31,7 +32,6 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "commander": "^2.7.1",
     "coveralls": "^2.11.2",
     "istanbul": "^0.3.11",
     "mocha": "^2.2.4",
