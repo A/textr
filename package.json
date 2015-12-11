@@ -17,7 +17,7 @@
     "coveralls": "coveralls < coverage/lcov.info",
     "test": "mocha",
     "tdd": "npm test -- --watch",
-    "bench": "node -p \"i=1000000,s=+new Date;while(i--){require('.')('hello')};new Date-s+'ms'\""
+    "bench": "node -p \"i=j=1000000,s=+new Date;while(i--){require('.')('hello')};new Date-s+'ms for '+j+' iterations'\""
   },
   "keywords": [
     "typographic",
