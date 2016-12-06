@@ -158,17 +158,17 @@ MIT © [Shuvalov Anton](http://shuvalov.info), [Vladimir Starkov](https://iamsta
 [npm-url]: https://npmjs.org/package/textr
 [npm-image]: https://img.shields.io/npm/v/textr.svg
 
-[travis-url]: https://travis-ci.org/shuvalov-anton/textr
-[travis-image]: https://img.shields.io/travis/shuvalov-anton/textr.svg
+[travis-url]: https://travis-ci.org/A/textr
+[travis-image]: https://img.shields.io/travis/A/textr.svg
 
-[coveralls-url]: https://coveralls.io/r/shuvalov-anton/textr
-[coveralls-image]: https://img.shields.io/coveralls/shuvalov-anton/textr.svg
+[coveralls-url]: https://coveralls.io/r/A/textr
+[coveralls-image]: https://img.shields.io/coveralls/A/textr.svg
 
-[depstat-url]: https://david-dm.org/shuvalov-anton/textr
-[depstat-image]: https://david-dm.org/shuvalov-anton/textr.svg
+[depstat-url]: https://david-dm.org/A/textr
+[depstat-image]: https://david-dm.org/A/textr.svg
 
-[depstat-dev-url]: https://david-dm.org/shuvalov-anton/textr
-[depstat-dev-image]: https://david-dm.org/shuvalov-anton/textr/dev-status.svg
+[depstat-dev-url]: https://david-dm.org/A/textr
+[depstat-dev-image]: https://david-dm.org/A/textr/dev-status.svg
 
 [typographic-quotes]: https://github.com/matmuchrapna/typographic-quotes
 [typographic-math-symbols]: https://github.com/matmuchrapna/typographic-math-symbols

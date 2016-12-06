@@ -2,14 +2,14 @@
   "name": "textr",
   "version": "0.3.0",
   "description": "Tiny and extendable text transforming framework",
-  "homepage": "http://shuvalov-anton.github.io/textr/",
+  "homepage": "http://A.github.io/textr/",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shuvalov-anton/textr"
+    "url": "https://github.com/A/textr"
   },
   "bugs": {
-    "url": "https://github.com/shuvalov-anton/textr/issues"
+    "url": "https://github.com/A/textr/issues"
   },
   "scripts": {
     "coverage": "istanbul cover _mocha",
